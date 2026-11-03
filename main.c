@@ -9,7 +9,7 @@ char rand_char() {
 int main(int argc, char **argv) {
   srand(time(NULL));
 
-  int char_count = 1;
+  long char_count = 1;
   if (argc > 1)
     char_count = atoi(argv[1]);
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 
   FILE *file = fopen("text", "w+");
 
-  for (int i = 0; i < megabyte_count; i++)
+  for (long i = 0; i < megabyte_count; i++)
     fprintf(file, "%c", rand_char());
 
   fclose(file);
